@@ -1,0 +1,89 @@
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>wednesday week3</title><meta name=description content=""><meta name=viewport content="width=device-width"><link rel="shortcut icon" href=/6df2b309.favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/6e15120d.main.css><body><!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]--><header></header><div class=container><div class=whole-page><div class=side-bar></div><div class=main-content><div class=tabs></div><div class=repo-bar><div class=new-repo-button>New</div><ul class=repo-bar-selector><li>All</li><li>Public</li><li>Private</li><li>Sources</li><li>Forks</li><li>Mirrors</li></ul></div><ul class=repo-list></ul></div><div class=footer-container><div class=page-footer><ul class=footer-list-company-info><li>© 2014 GitHub, Inc.</li><li>Terms</li><li>Privacy</li><li>Security</li><li>Contact</li></ul><ul class=footer-list-status-about><li>Status</li><li>API</li><li>Training</li><li>Shop</li><li>Blog</li><li>About</li></ul></div></div></div></div><!-- side bar jquery template --><script type=text/template class=side-bar-content-template><div class="avatar-image">
+                <img src="<%=avatar_url %>">
+            </div>
+            <div class="profile-names">
+                <h1><%=name %></h1>
+                <h2><%=login %></h2>
+            </div>
+            <div>   
+                <ul class="profile-content">
+                    <li><%=company %></li>
+                    <li><%=location %></li>
+                    <li>
+                        <a href="mailto:<%=email %>" >
+                            <%=email %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%=blog %>" >
+                            <%=blog %>
+                        </a>
+                    </li>
+                    <li>Joined on</li>
+                    <!-- <%=created_at %> add in date -->
+                </ul>
+            </div>
+                <div class="profile-stats">
+                    <a href="<%=followers_url%>">    
+                        <div class="stat-container">
+                            <strong class="stats-counter">
+                                <%=followers %>
+                            </strong>
+                            Followers
+                        </div>
+                    </a>      
+                    <a href="https://github.com/stars/<%=login %>">
+                        <div class="stat-container">
+                            <strong class="stats-counter">
+                                <%=0 %>
+                            </strong>
+                            Starred
+                        </div>
+                    </a> 
+
+                    <a href="<%=following_url%>">    
+                        <div class="stat-container">
+                            <strong class="stats-counter">
+                               <%=following %>
+                            </strong>
+                            Followers
+                        </div>
+                    </a>  
+                </div></script><!-- repository template --><script type=text/template class=repo-template><li>
+                <div class="repo-container">
+                    <div class="repo-name">
+                        <span></span>
+                        <h2><a href="<%=html_url %>">
+                            <%=name %>
+                        </a></h2>
+                    </div>    
+                    
+
+                    <ul class="stats">
+                        <li class="repo-language">
+                            <%=language %>
+                        </li>
+                        <li class="stargazers">
+                            <%=stargazers_count %>
+                        </li>
+                        <li class="branches">
+                            <%=forks_count %>
+                        </li>
+                    </ul>
+
+                    
+                    <div class="repo-description">
+                        <%=description %>
+                    </div>
+                    <div class="repo-last-updated">
+                        Last updated <%=updated_at %> ago
+                    </div>
+                </div>
+             <li></script><script src=scripts/f51f348e.vendor.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/cdb5aefa.main.js></script>
