@@ -42,11 +42,11 @@ function repoRendering (data) {
 ///// Repos ////////////////////////////////////////
 ////////////////////////////////////////////////////
 
-$.getJSON('https://api.github.com/users/gingerrific').done(function (user){
+$.getJSON('https://api.github.com/users/gingerrific' + apiKEY).done(function (user){
   userRendering(user);
 });
 
-$.getJSON('https://api.github.com/users/gingerrific/repos').done(function (repos){
+$.getJSON('https://api.github.com/users/gingerrific/repos' + apiKEY).done(function (repos){
   repoRendering(repos);
 });
 
