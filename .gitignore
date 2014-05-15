@@ -4,5 +4,5 @@ node_modules
 .sass-cache
 bower_components
 test/bower_components
-scripts/apicalls.js
+app/scripts/apicalls.js
 .DS_Store
