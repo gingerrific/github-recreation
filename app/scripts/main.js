@@ -20,10 +20,8 @@ var repoTemplate = _.template($('.repo-template').text());
 ////////////////////////////////////////////////////
 
 function userRendering (user){
-    [user].map(function (sidebar) {
-      var gingerNinja = sideBarTemplate(sidebar);
+      var gingerNinja = sideBarTemplate(user);
       $('.side-bar').prepend(gingerNinja);
-});
 }
 
 function repoRendering (data) {
