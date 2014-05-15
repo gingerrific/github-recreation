@@ -20,7 +20,7 @@ var repoTemplate = _.template($('.repo-template').text());
 ////////////////////////////////////////////////////
 
 function userRendering (user){
-    user.forEach(function (sidebar) {
+    user.map(function (sidebar) {
       var gingerNinja = sideBarTemplate(sidebar);
       $('.side-bar').prepend(gingerNinja);
 });
