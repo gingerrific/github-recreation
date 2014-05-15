@@ -29,7 +29,24 @@
 
         </div>
 
-        <div class="main-content">       
+        <div class="main-content">  
+           <div class="tabs">
+           </div> 
+            <div class="repo-bar">
+                <div class="new-repo-button">
+                    New
+                </div>
+
+                <ul class="repo-bar-selector">
+                    <li>All</li>
+                    <li>Public</li>
+                    <li>Private</li>
+                    <li>Sources</li>
+                    <li>Forks</li>
+                    <li>Mirrors</li>
+                </ul>
+
+            </div>     
             <ul class="repo-list">
 
             </ul>
@@ -87,7 +104,7 @@
             </div>
                 <div class="profile-stats">
                     <a href="<%=followers_url%>">    
-                        <div class="followers">
+                        <div class="stat-container">
                             <strong class="stats-counter">
                                 <%=followers %>
                             </strong>
@@ -95,16 +112,16 @@
                         </div>
                     </a>      
                     <a href="https://github.com/stars/<%=login %>">
-                        <div class="stars">
+                        <div class="stat-container">
                             <strong class="stats-counter">
-                                <%=0 %>
+                                <%=starred %>
                             </strong>
                             Starred
                         </div>
                     </a> 
 
                     <a href="<%=following_url%>">    
-                        <div class="following">
+                        <div class="stat-container">
                             <strong class="stats-counter">
                                <%=following %>
                             </strong>
@@ -119,11 +136,12 @@
         <script type="text/template" class="repo-template">
             <li>
                 <div class="repo-container">
-                    <a href="<%=html_url %>">
-                        <div class="repo-name">
-                            <h2><%=name %></h2>
-                        </div>
-                    </a>
+                    <div class="repo-name">
+                        <span></span>
+                        <h2><a href="<%=html_url %>">
+                            <%=name %>
+                        </a></h2>
+                    </div>    
                     
 
                     <ul class="stats">

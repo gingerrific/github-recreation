@@ -1155,6 +1155,15 @@ var repoInfo = [
   }
 ];
 
+var numStarred = 0;
+// does a loop through the repo data in search of any 
+// starred repos and adds them to an existing variable
+repoInfo.forEach(function(repo) {
+  numStarred = numStarred + repo.stargazers_count;
+});
+// adds the value to your user data object, if it's not there it creates it
+githubUser[0]["starred"] = numStarred;
+
 
 var sideBarTemplate = _.template($('.side-bar-content-template').text());
 
@@ -1171,3 +1180,5 @@ repoInfo.forEach(function (repo){
 	var repository = repoTemplate(repo);
 	$('.repo-list').append(repository);
 });
+
+
