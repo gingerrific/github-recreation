@@ -11,6 +11,7 @@ $gray: #DDDDDD;
 $black: #333333;
 $blue: #4183C4;
 $link-blue: #4183C4;
+$dark-gray: #666;
 
 ///// Header ///////////////////////////////////////
 ////////////////////////////////////////////////////
@@ -31,7 +32,7 @@ header {
     & .header-logo {
         height: 25px;
         width: 25px;
-        background: url(/images/octocat-icon-big.png);
+        background: url(../images/octocat-icon-big.png);
         float: left;
         background-size: contain;
         margin-top: 7px;
@@ -46,49 +47,69 @@ header {
         position: relative;
         margin-left: 15px;
 
-        &:after {
+        & span {
             position: absolute;
             content: " ";
-            height: 6px;
-            width: 6px;
+            height: 7px;
+            width: 7px;
             border-radius: 50%;
-            border: 1px solid black;
+            border: 1px solid #AEAEAE;
+            background: linear-gradient(to bottom, #AAA 0%, #CCC 100%);
             top: 50%;
-            margin-top: -5px;
+            margin-top: -4px;
             left: 40%;
         }
     }
 
-    & .header-search {
-        width: 215px;
-        height: 20px;
-        font-size: 12px;
-        margin-top: 7px;
-
-    }
     & .header-content {
         width: 90%;
         float: right;
+        position: relative;
 
         & .header-search {
             float: left;
+            width: 210px;
+            height: 25px;
+            font-size: 12px;
+            margin-top: 5px;
+            border-radius: 4px;
+            padding-left: 7px;
+            background: #FCFCFC;
+            border: 1px solid $gray;
+            transition: all .4s ease;
         }
         
         & .header-links {
             display: inline-block;
-
+            position: absolute;
+            left: 220px;
+            opacity: 1;
+            transition: all .2s linear;
             ul {
             list-style: none;
             display: inline-block;
             margin: 0;
             padding: 0;
+            position: relative;
                 & li {
                     display: inline-block;
                     line-height: 41px;
                     font-weight: bold;
                     margin-left: 10px;
                 }
-            }    
+            }   
+
+            &:before {
+                position: absolute;
+                content: " ";
+                background: url(../images/question-icon.png);
+                background-size: contain;
+                height: 12px;
+                width: 12px;
+                left: -22px;
+                top: 13px;
+                opacity: .5;
+            } 
         }
                
         & .header-pic {
@@ -133,21 +154,34 @@ header {
                 }
 
                 & .add {
-                    background: url(/images/plus-icon.png);
+                    background: url(../images/plus-icon.png);
                     height: 16px;
                     width: 16px;
                     background-repeat: no-repeat;
                     background-position: 0 2px;
+                    position: relative;
+                    margin-right: 5px;
+                    &:before {
+                        position: absolute;
+                        right:-3px;
+                        top: 6px;
+                        content: " ";
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 3px 3px 0 3px;
+                        border-color: #000000 transparent transparent transparent;
+                    }
                 }
 
                 & .settings {
-                    background: url(/images/tools-icon.png);
+                    background: url(../images/tools-icon.png);
                     height: 16px;
                     width: 16px;    
                 }
 
                 & .sign-out {
-                    background: url(/images/logout-icon.png);
+                    background: url(../images/logout-icon.png);
                     height: 16px;
                     width: 16px;
                 }
@@ -182,7 +216,7 @@ header {
             line-height: 35px;
             text-align: center;
             border-bottom: 1px solid $gray;
-            margin-left: -4px;
+            margin-left: -3px;
         }
         & .active-tab {
             border-top: 1px solid $gray;
@@ -191,7 +225,7 @@ header {
             border-bottom: 1px solid white;
             border-top-left-radius: 3px;
             border-top-right-radius: 3px;
-            z-index: 5;
+            padding-bottom: 2px;
         }
     }
 }
@@ -208,25 +242,29 @@ header {
 }
 
 .search-bar {
-    width: 255px;
-    height: 29px;
+    width: 248px;
+    height: 30px;
     font-size: 13px;
     display: inline-block;
     float: left;
+    border-radius: 4px;
+    border: 1px solid $gray;
+    padding-left: 9px; 
+
 }
 
 .search-button {
     display: inline-block;
-    height: 30px;
+    height: 32px;
     width: 66px;
-    background: $gray;
+    background: linear-gradient(to bottom, #EEEEEE 0%,#DDDDDD 100%);
     float: left;
     text-align: center;
-    margin-top: 1px;
     margin-left: 5px;
-    border: 1px solid $black;
+    border: 1px solid $gray;
     border-radius: 4px;
     line-height: 30px;
+    font-weight: bold;
 
 }
 
@@ -246,18 +284,23 @@ header {
 }
 
 .new-repo-button {
-    background: green;
+    height: 32px;
+    width: 51px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #79D758 0%, #579F3D 100%);
     display: inline-block;
     float: right;
     margin-left: 15px;
     margin-right: -3px;
+    padding-right: 15px;
     font-size: 13px;
-    height: 30px;
-    width: 70px;
-    text-align: center;
-    line-height: 30px;
-    border: 1px solid black;
+    text-align: right;
+    line-height: 32px;
+    border: 1px solid darken(#579F3D, 5%);
     color: white;
+    font-weight: bold;
+    position: relative;
+    text-shadow: $black 0 -1px 0;
 }
 
 ///// Main /////////////////////////////////////////
@@ -336,13 +379,13 @@ body {
         }
 
         & span {
-            height: 32px;
+            height: 39px;
             width: 35px;
             float: left;
             margin-left: -45px;
-            background: url(/images/book-icon-big.png) no-repeat;
+            background: url(../images/book.png) no-repeat;
             background-size: contain;
-            background-position: 6px 1px;
+            background-position: 1px 1px top;
 
         }
     }
@@ -350,14 +393,33 @@ body {
     & .stats {
         list-style: none;
         float: right;
-        margin-top: 11px;
+        margin-top: 13px;
 
         & li {
             font-size: 11px;
             font-weight: bold;
             display: inline-block;
-            margin-left: 10px;
-            color: $black;
+            margin-left: 30px;
+            color: $dark-gray;
+            position: relative;
+        }
+
+        & .stargazers:before, & .branches:before {
+            position: absolute;
+            content: " ";
+            left: -20px;
+            top: -4px;
+            height: 18px;
+            width: 18px;
+            background-size: contain;
+        }
+
+        & .stargazers:before {
+            background: url(../images/star.png);
+        }
+
+        & .branches:before {
+            background: url(../images/fork.png);
         }
     }
 
@@ -408,9 +470,9 @@ body {
     }
 
     & h2 {
-        font-weight: lighter;
+        font-weight: 300;
         margin-top: 3px;
-        color: #666666;
+        color: $dark-gray;
     }
 }
 
@@ -432,28 +494,34 @@ body {
         text-decoration: none;
     }
 
-    & li:nth-child(5):before {
-        position: absolute;
-        left: 0px;
-        top: 3px;
+    & .blog:before, & .mail:before, & .location:before, & .company:before, & .joined:before {
         content: " ";
-        // background: url(/images/clock-icon.png);
-        height: 10px;
-        width: 10px;
-        border: 2px solid $gray;
-        border-radius: 50%;
-   }
+        position: absolute;
+        left: -3px;
+        top: -1px;
+        height: 21px;
+        width: 21px;
+        background-size: contain;
+    }
 
-   & li:nth-child(5):after {
-        position: absolute;
-        left: 6px;
-        top: 6px;
-        content: " ";
-        // background: url(/images/clock-icon.png);
-        height: 3px;
-        width: 3px;
-        border-left: 2px solid $gray;
-        border-bottom: 2px solid $gray;
+    & .blog:before {
+        background: url(../images/linklogo.png);
+    }
+
+    & .mail:before {
+        background: url(../images/maillogo.png)
+    }
+
+    & .location:before {
+        background: url(../images/mapdot.png)
+    }
+
+    & .company:before {
+        background: url(../images/justme.png)
+    }
+
+    & .joined:before {
+        background: url(../images/clocklogo.png)
    }
 }
 

@@ -11,7 +11,7 @@ var headerTeamplate = _.template($('.header-profile-template').text());
 ////////////////////////////////////////////////////
 
 function userRendering (user){
-      user.created_at = moment(user.created_at).format("MMMM Do, YYYY");
+      user.created_at = moment(user.created_at).format("MMM Do, YYYY");
       var gingerNinja = sideBarTemplate(user);
       $('.side-bar').prepend(gingerNinja);
 }
@@ -34,6 +34,15 @@ function headerBio (bio) {
   var bioInfo = headerTeamplate(bio);
   $('.header-pic').prepend(bioInfo);
 }
+
+
+$('.header-search').focus( function () {
+  $(this).css({'width':'390px','background': '#fff'});
+  $('.header-links').css('opacity', '0');
+}).focusout (function() {
+  $(this).css({'width':'210', 'background': '#fff'});
+  $('.header-links').delay(150).queue( function (next) {$(this).css('opacity', '1'); next();})
+});
 
 ///// API Calls ////////////////////////////////////
 ////////////////////////////////////////////////////
