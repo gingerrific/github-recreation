@@ -21,18 +21,62 @@
         <![endif]-->
 
 <header>
+    <div class="header-container">
+        <div class="header-logo"></div>
+        
+        <a href="https://github.com/notifications"> 
+            <div class="header-notifications"></div>
+        </a>
+        <div class="header-content">
+                <input class="header-search" type="text" placeholder="Search a type or command">
+        
+            <div class="header-links">
+                <ul>
+                    <li>Explore</li>
+                    <li>Gist</li>
+                    <li>Blog</li>
+                    <li>Help</li>
+                </ul>
+            </div> 
+            <div class="header-tools">
+                <ul>
+                    <li class="add"></li>
+                    <li class="settings"></li>
+                    <li class="sign-out"></li>
+                </ul>
+            </div>
+            <div class="header-pic">
+            </div> 
+            
 
+        </div>
+    </div>
 </header>
+
 <div class="container">
     <div class="whole-page">
+        
         <div class="side-bar">
 
         </div>
 
         <div class="main-content">  
+            
            <div class="tabs">
+                <div class="content-nav">
+                    <ul>
+                        <li>Contributions</li>
+                        <li class="active-tab">Repositories</li>
+                        <li>Public Activity</li>
+                    </ul>
+                </div>
+                <div class="edit-profile-button"></div>    
            </div> 
+
             <div class="repo-bar">
+                <input class="search-bar" type= "text" placeholder=" Find a repository...">
+                <div class="search-button">Search</div>
+
                 <div class="new-repo-button">
                     New
                 </div>
@@ -165,7 +209,14 @@
              <li>   
         </script>
 
-
+        <script type="text/template" class="header-profile-template">
+            <div class="header-profile-pic">
+                <img src ="<%=avatar_url%>">
+            </div>
+            <div class="header-profile">
+                <%=login %>
+            </div>
+        </script>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->

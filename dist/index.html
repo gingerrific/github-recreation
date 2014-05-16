@@ -1,6 +1,6 @@
-<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>wednesday week3</title><meta name=description content=""><meta name=viewport content="width=device-width"><link rel="shortcut icon" href=/6df2b309.favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/445bc039.main.css><body><!--[if lt IE 10]>
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>wednesday week3</title><meta name=description content=""><meta name=viewport content="width=device-width"><link rel="shortcut icon" href=/6df2b309.favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/54dd2580.main.css><body><!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]--><header></header><div class=container><div class=whole-page><div class=side-bar></div><div class=main-content><div class=tabs></div><div class=repo-bar><div class=new-repo-button>New</div><ul class=repo-bar-selector><li>All</li><li>Public</li><li>Private</li><li>Sources</li><li>Forks</li><li>Mirrors</li></ul></div><ul class=repo-list></ul></div><div class=footer-container><div class=page-footer><ul class=footer-list-company-info><li>© 2014 GitHub, Inc.</li><li>Terms</li><li>Privacy</li><li>Security</li><li>Contact</li></ul><ul class=footer-list-status-about><li>Status</li><li>API</li><li>Training</li><li>Shop</li><li>Blog</li><li>About</li></ul></div></div></div></div><!-- side bar jquery template --><script type=text/template class=side-bar-content-template><div class="avatar-image">
+        <![endif]--><header><div class=header-container><div class=header-logo></div><a href=https://github.com/notifications><div class=header-notifications></div></a><div class=header-content><input class=header-search placeholder="Search a type or command"><div class=header-links><ul><li>Explore</li><li>Gist</li><li>Blog</li><li>Help</li></ul></div><div class=header-tools><ul><li class=add></li><li class=settings></li><li class=sign-out></li></ul></div><div class=header-pic></div></div></div></header><div class=container><div class=whole-page><div class=side-bar></div><div class=main-content><div class=tabs><div class=content-nav><ul><li>Contributions</li><li class=active-tab>Repositories</li><li>Public Activity</li></ul></div><div class=edit-profile-button></div></div><div class=repo-bar><input class=search-bar placeholder=" Find a repository..."><div class=search-button>Search</div><div class=new-repo-button>New</div><ul class=repo-bar-selector><li>All</li><li>Public</li><li>Private</li><li>Sources</li><li>Forks</li><li>Mirrors</li></ul></div><ul class=repo-list></ul></div><div class=footer-container><div class=page-footer><ul class=footer-list-company-info><li>© 2014 GitHub, Inc.</li><li>Terms</li><li>Privacy</li><li>Security</li><li>Contact</li></ul><ul class=footer-list-status-about><li>Status</li><li>API</li><li>Training</li><li>Shop</li><li>Blog</li><li>About</li></ul></div></div></div></div><!-- side bar jquery template --><script type=text/template class=side-bar-content-template><div class="avatar-image">
                 <img src="<%=avatar_url %>">
             </div>
             <div class="profile-names">
@@ -21,8 +21,7 @@
                             <%=blog %>
                         </a>
                     </li>
-                    <li>Joined on</li>
-                    <!-- <%=created_at %> add in date -->
+                    <li>Joined on <%=created_at %></li>      
                 </ul>
             </div>
                 <div class="profile-stats">
@@ -36,8 +35,7 @@
                     </a>      
                     <a href="https://github.com/stars/<%=login %>">
                         <div class="stat-container">
-                            <strong class="stats-counter">
-                                <%=0 %>
+                            <strong class="stats-counter star-counter">  
                             </strong>
                             Starred
                         </div>
@@ -81,9 +79,14 @@
                         Last updated <%=updated_at %> ago
                     </div>
                 </div>
-             <li></script><script src=scripts/f51f348e.vendor.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+             <li></script><script type=text/template class=header-profile-template><div class="header-profile-pic">
+                <img src ="<%=avatar_url%>">
+            </div>
+            <div class="header-profile">
+                <%=login %>
+            </div></script><script src=scripts/27c882be.vendor.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/ae1af932.main.js></script>
+            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/2679eb8a.main.js></script>

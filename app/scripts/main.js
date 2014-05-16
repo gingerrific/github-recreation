@@ -6,6 +6,7 @@ var sideBarTemplate = _.template($('.side-bar-content-template').text());
 
 var repoTemplate = _.template($('.repo-template').text());
 
+var headerTeamplate = _.template($('.header-profile-template').text());
 ///// Functions ////////////////////////////////////
 ////////////////////////////////////////////////////
 
@@ -29,12 +30,17 @@ function starReporting (starCount) {
   $('.star-counter').append(starCount.length);
 }
 
+function headerBio (bio) {
+  var bioInfo = headerTeamplate(bio);
+  $('.header-pic').prepend(bioInfo);
+}
 
 ///// API Calls ////////////////////////////////////
 ////////////////////////////////////////////////////
 
 $.getJSON('https://api.github.com/users/gingerrific' + apiKEY).done(function (user){
   userRendering(user);
+  headerBio(user);
 });
 
 $.getJSON('https://api.github.com/users/gingerrific/repos' + apiKEY).done(function (repos){
@@ -44,6 +50,7 @@ $.getJSON('https://api.github.com/users/gingerrific/repos' + apiKEY).done(functi
 $.getJSON('https://api.github.com/users/gingerrific/starred' + apiKEY).done(function (stars){
   starReporting(stars);
 });
+
 
 
 
