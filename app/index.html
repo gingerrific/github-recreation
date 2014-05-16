@@ -98,8 +98,7 @@
                             <%=blog %>
                         </a>
                     </li>
-                    <li>Joined on</li>
-                    <!-- <%=created_at %> add in date -->
+                    <li>Joined on <%=created_at %></li>      
                 </ul>
             </div>
                 <div class="profile-stats">
@@ -113,8 +112,7 @@
                     </a>      
                     <a href="https://github.com/stars/<%=login %>">
                         <div class="stat-container">
-                            <strong class="stats-counter">
-                                <%=0 %>
+                            <strong class="stats-counter star-counter">  
                             </strong>
                             Starred
                         </div>
@@ -173,8 +171,10 @@
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/underscore/underscore.js"></script>
+        <script src="../bower_components/momentjs/moment.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
+        
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

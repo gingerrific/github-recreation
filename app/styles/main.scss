@@ -141,7 +141,10 @@ body {
             width: 35px;
             float: left;
             margin-left: -45px;
-            background: red;
+            background: url(/images/book-icon-big.png) no-repeat;
+            background-size: contain;
+            background-position: 6px 1px;
+
         }
     }
 
@@ -216,17 +219,43 @@ body {
     list-style: none;
     border-top: 1px solid #DDDDDD;
     padding: 15px 0 0;
+    position: relative;
     
     & li {
         font-size: 14px;
         line-height: 1.4;
         padding: 2px 0 2px 24px;
+        position: relative;
     }
 
     & a {
         color: $link-blue;
         text-decoration: none;
     }
+
+    & li:nth-child(5):before {
+        position: absolute;
+        left: 0px;
+        top: 3px;
+        content: " ";
+        // background: url(/images/clock-icon.png);
+        height: 10px;
+        width: 10px;
+        border: 2px solid $gray;
+        border-radius: 50%;
+   }
+
+   & li:nth-child(5):after {
+        position: absolute;
+        left: 6px;
+        top: 6px;
+        content: " ";
+        // background: url(/images/clock-icon.png);
+        height: 3px;
+        width: 3px;
+        border-left: 2px solid $gray;
+        border-bottom: 2px solid $gray;
+   }
 }
 
 .profile-stats {
