@@ -7,6 +7,8 @@ var sideBarTemplate = _.template($('.side-bar-content-template').text());
 var repoTemplate = _.template($('.repo-template').text());
 
 var headerTeamplate = _.template($('.header-profile-template').text());
+
+var popularTemplate = _.template($('.popular-contributions-template').text());
 ///// Functions ////////////////////////////////////
 ////////////////////////////////////////////////////
 
@@ -35,7 +37,26 @@ function headerBio (bio) {
   $('.header-pic').prepend(bioInfo);
 }
 
+function popularRendering (data) {
+    data.forEach(function (repo){
+      var popRepos = popularTemplate(repo);
+      $('.popular-repos').prepend(popRepos);
+    });
+};
 
+// fix me by stargazers count
+// function popularRendering (data) {
+//     _.sortBy(data, function (sortedData){
+//       return sortedData.
+//     })
+//     data.forEach(function (repo){
+//       var popRepos = popularTemplate(repo);
+//       $('.popular-repos').prepend(popRepos);
+//     });
+// };
+
+///// Page jQuery //////////////////////////////////
+////////////////////////////////////////////////////
 $('.header-search').focus( function () {
   $(this).css({'width':'390px','background': '#fff'});
   $('.header-links').css('opacity', '0');
@@ -54,6 +75,7 @@ $.getJSON('https://api.github.com/users/gingerrific' + apiKEY).done(function (us
 
 $.getJSON('https://api.github.com/users/gingerrific/repos' + apiKEY).done(function (repos){
   repoRendering(repos);
+  popularRendering(repos);
 });
 
 $.getJSON('https://api.github.com/users/gingerrific/starred' + apiKEY).done(function (stars){

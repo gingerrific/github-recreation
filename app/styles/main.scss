@@ -347,9 +347,12 @@ body {
 }
 
 
-///// Repos ////////////////////////////////////////
+///// Repo Content /////////////////////////////////
 ////////////////////////////////////////////////////
 
+.repo-content {
+    display: none;
+}
 
 .repo-list {
     list-style: none;
@@ -435,7 +438,26 @@ body {
     }
 }
 
+///// Contributions ////////////////////////////////
+////////////////////////////////////////////////////
 
+.popular-and-contributed {
+    margin-top: 20px;
+}
+.popular-container, .contributed-to-container {
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid $gray;
+}
+
+.popular-contributions, .repos-contributed-to {
+    height: 35px;
+    width: 300px;
+    padding-left: 10px;
+    background: $light-gray;
+    line-height: 35px;
+    font-weight: bold;
+}
 
 
 ///// SideBar //////////////////////////////////////

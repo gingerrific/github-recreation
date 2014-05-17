@@ -75,27 +75,62 @@
                 <div class="edit-profile-button"></div>    
            </div> 
 
-            <div class="repo-bar">
-                <input class="search-bar" type= "text" placeholder="Find a repository...">
-                <div class="search-button">Search</div>
+            <div class="repo-content">       
+                <div class="repo-bar">
+                    <input class="search-bar" type= "text" placeholder="Find a repository...">
+                    <div class="search-button">Search</div>
 
-                <div class="new-repo-button">
-                    New
+                    <div class="new-repo-button">
+                        New
+                    </div>
+
+                    <ul class="repo-bar-selector">
+                        <li>All</li>
+                        <li>Public</li>
+                        <li>Private</li>
+                        <li>Sources</li>
+                        <li>Forks</li>
+                        <li>Mirrors</li>
+                    </ul>
+
+                </div>  
+                <ul class="repo-list">
+
+                </ul>
+            </div>    
+
+            <div class="contributions-content">
+                <div class="popular-and-contributed">
+                    <div class="popular-container">
+                        <div class="popular-contributions">Popular Repositories
+                            <ul class="popular-repos">
+
+                            </ul>
+                        </div>
+                    </div>  
+                    <div class="contributed-to-container">
+                        <div class="repos-contributed-to">Repositories Contributed to
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <ul class="repo-bar-selector">
-                    <li>All</li>
-                    <li>Public</li>
-                    <li>Private</li>
-                    <li>Sources</li>
-                    <li>Forks</li>
-                    <li>Mirrors</li>
-                </ul>
+                <div class="contributions-calendar-container">
+                    <div class="commit-calendar"></div>
+                    <div class="commit-key"></div>
+                    <div class="commit-stats">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>   
+                    </div>
+                </div>
 
-            </div>     
-            <ul class="repo-list">
-
-            </ul>
+            </div>
+                <div class="contribution-activity"></div>
+                <div class="commit-activity"></div>
         </div>
 
         <div class="footer-container">
@@ -218,6 +253,24 @@
             <div class="header-profile">
                 <%=login %>
             </div>
+        </script>
+
+
+        <script class="popular-contributions-template" type="text/template">
+            <li>  
+                <div class="pop-repo-container">
+                    <div class="pop-repo-name">
+                        <span></span>
+                        <a href="<%=html_url %>">
+                            <%=name %>
+                        </a>
+                    </div> 
+                    <div class="popular-stargazers">
+                    <%=stargazers_count %>
+                    </div>
+                </div>   
+            </li>  
+  
         </script>
 
         <!-- build:js scripts/vendor.js -->
