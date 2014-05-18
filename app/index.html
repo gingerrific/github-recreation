@@ -74,7 +74,7 @@
                 </div>
                 <div class="edit-profile-button"></div>    
            </div> 
-
+<!-- repositories tab -->
             <div class="repo-content">       
                 <div class="repo-bar">
                     <input class="search-bar" type= "text" placeholder="Find a repository...">
@@ -99,14 +99,15 @@
                 </ul>
             </div>    
 
+<!-- Contributions tab -->
             <div class="contributions-content">
                 <div class="popular-and-contributed">
                     <div class="popular-container">
                         <div class="popular-contributions">Popular Repositories
-                            <ul class="popular-repos">
-
-                            </ul>
                         </div>
+                        <ul class="popular-repos">
+
+                        </ul>
                     </div>  
                     <div class="contributed-to-container">
                         <div class="repos-contributed-to">Repositories Contributed to
@@ -183,7 +184,7 @@
                 </ul>
             </div>
                 <div class="profile-stats">
-                    <a href="<%=followers_url%>">    
+                    <a href="https://github.com/<%=login%>/followers"> 
                         <div class="stat-container">
                             <strong class="stats-counter">
                                 <%=followers %>
@@ -199,17 +200,18 @@
                         </div>
                     </a> 
 
-                    <a href="<%=following_url%>">    
+                    <a href="https://github.com/<%=login%>/followers">    
                         <div class="stat-container">
                             <strong class="stats-counter">
                                <%=following %>
                             </strong>
-                            Followers
+                            Following
                         </div>
                     </a>  
                 </div>
 
         </script>
+        
 <!-- repository template -->
 
         <script type="text/template" class="repo-template">
@@ -246,6 +248,7 @@
              <li>   
         </script>
 
+        <!-- header account info template -->
         <script type="text/template" class="header-profile-template">
             <div class="header-profile-pic">
                 <img src ="<%=avatar_url%>">
@@ -255,7 +258,7 @@
             </div>
         </script>
 
-
+        <!-- pop. contribution template -->
         <script class="popular-contributions-template" type="text/template">
             <li>  
                 <div class="pop-repo-container">
@@ -267,6 +270,9 @@
                     </div> 
                     <div class="popular-stargazers">
                     <%=stargazers_count %>
+                    </div>
+                    <div class="pop-repo-description">
+                        <%=description %>
                     </div>
                 </div>   
             </li>  

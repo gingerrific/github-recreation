@@ -12,6 +12,7 @@ $black: #333333;
 $blue: #4183C4;
 $link-blue: #4183C4;
 $dark-gray: #666;
+$dark-gray-text: #777;
 
 ///// Header ///////////////////////////////////////
 ////////////////////////////////////////////////////
@@ -336,10 +337,15 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     display: inline-block;
-
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
 
     & ul {
         padding-left: 0;
@@ -357,8 +363,6 @@ body {
 .repo-list {
     list-style: none;
     margin-bottom: 0;
-    & li {
-    }
 }
 
 .repo-container {
@@ -441,6 +445,10 @@ body {
 ///// Contributions ////////////////////////////////
 ////////////////////////////////////////////////////
 
+.contributions-content {
+    // display: none;
+}
+
 .popular-and-contributed {
     margin-top: 20px;
 }
@@ -448,17 +456,64 @@ body {
     display: inline-block;
     border-radius: 4px;
     border: 1px solid $gray;
+    width: 350px;
+    vertical-align: top;
+    line-height: 1.4;
+    color: darken($dark-gray-text, 13.5%);
+}
+
+.contributed-to-container {
+    float: right;
+    margin-right: 5px;
 }
 
 .popular-contributions, .repos-contributed-to {
     height: 35px;
-    width: 300px;
     padding-left: 10px;
     background: $light-gray;
     line-height: 35px;
     font-weight: bold;
+
 }
 
+.popular-repos {
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 0;
+    color: $dark-gray-text;
+
+    & .pop-repo-container {
+        padding: 10px 20px 5px 25px;
+        border-bottom: 1px solid $gray;
+        min-height: 30px;
+
+        & .pop-repo-name {
+            // display: inline-block;
+            // float: left;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: -3px;
+
+            & a {
+                color: $blue;
+                text-decoration: none;
+            }
+     
+        }
+
+        & .popular-stargazers {
+            display: inline-block;
+            float: right;
+            margin-top: -5px;
+        }
+
+        & .pop-repo-description {
+            font-size: 12px;
+        }
+    }
+}
 
 ///// SideBar //////////////////////////////////////
 ////////////////////////////////////////////////////

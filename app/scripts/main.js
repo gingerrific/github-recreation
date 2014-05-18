@@ -39,10 +39,13 @@ function headerBio (bio) {
 
 function popularRendering (data) {
     data.forEach(function (repo){
+      if (repo.description && repo.description.length > 40) {
+        repo.description=(repo.description.substring(0, 40)+'...');
+      }  
       var popRepos = popularTemplate(repo);
       $('.popular-repos').prepend(popRepos);
     });
-};
+}
 
 // fix me by stargazers count
 // function popularRendering (data) {
@@ -55,6 +58,8 @@ function popularRendering (data) {
 //     });
 // };
 
+
+
 ///// Page jQuery //////////////////////////////////
 ////////////////////////////////////////////////////
 $('.header-search').focus( function () {
@@ -62,7 +67,7 @@ $('.header-search').focus( function () {
   $('.header-links').css('opacity', '0');
 }).focusout (function() {
   $(this).css({'width':'210', 'background': '#fff'});
-  $('.header-links').delay(150).queue( function (next) {$(this).css('opacity', '1'); next();})
+  $('.header-links').delay(150).queue( function (next) {$(this).css('opacity', '1'); next();});
 });
 
 ///// API Calls ////////////////////////////////////
