@@ -203,8 +203,12 @@ header {
 
 }
 
+body {
+    min-width: 1020px; 
+}
 .content-nav {
     width: 100%;
+    cursor: pointer;
 
     & ul {
         margin: 0;
@@ -214,11 +218,44 @@ header {
             display: inline-block;
             padding: 0 12px;
             font-size: 14px;
-            line-height: 35px;
+            line-height: 37px;
             text-align: center;
             border-bottom: 1px solid $gray;
             margin-left: -3px;
+            position: relative;
+        
+            &:nth-child(1) span {
+                background:url(../images/contribution.png);
+                margin-right: -2px;
+                margin-left: 2px;
+                margin-top: -3px;
+            }
+
+            &:nth-child(2) span {
+                background:url(../images/book-icon.png);
+            }
+
+
+            &:nth-child(2) span, &:nth-child(1) span, &:nth-child(3) span{
+                height: 16px;
+                width: 16px;
+                background:url(../images/book-icon.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: -3px;
+            }
+
+            &:nth-child(3) span {
+                height: 13px;
+                width: 13px;
+                background:url(../images/activity.png);
+                margin-right: -2px;
+                margin-top: -5px;
+            }
         }
+
         & .active-tab {
             border-top: 1px solid $gray;
             border-left: 1px solid $gray;
@@ -352,13 +389,16 @@ body {
     }
 }
 
+.tabbed-content {
+    display: none;
+}
 
+.active {
+    display: inherit;
+}
 ///// Repo Content /////////////////////////////////
 ////////////////////////////////////////////////////
 
-.repo-content {
-    display: none;
-}
 
 .repo-list {
     list-style: none;
@@ -445,9 +485,6 @@ body {
 ///// Contributions ////////////////////////////////
 ////////////////////////////////////////////////////
 
-.contributions-content {
-    // display: none;
-}
 
 .popular-and-contributed {
     margin-top: 20px;
@@ -463,8 +500,9 @@ body {
 }
 
 .contributed-to-container {
-    float: right;
-    margin-right: 5px;
+    margin-left: 15px;
+    // margin-right: -15px;
+    vertical-align: top;
 }
 
 .popular-contributions, .repos-contributed-to {
@@ -473,7 +511,6 @@ body {
     background: $light-gray;
     line-height: 35px;
     font-weight: bold;
-
 }
 
 .popular-repos {
@@ -482,19 +519,31 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-top: 0;
+    margin-bottom: 0;
     color: $dark-gray-text;
 
     & .pop-repo-container {
-        padding: 10px 20px 5px 25px;
+        padding: 11px 26px 5px 30px;
         border-bottom: 1px solid $gray;
         min-height: 30px;
 
         & .pop-repo-name {
-            // display: inline-block;
-            // float: left;
             font-weight: bold;
             font-size: 14px;
-            margin-top: -3px;
+            margin-top: -4px;
+            position: relative;
+
+            &:before {
+                content: " ";
+                position: absolute;
+                left: -20px;
+                top: 1px;
+                height: 16px;
+                width: 16px;
+                background: url(../images/book-icon.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
 
             & a {
                 color: $blue;
@@ -506,7 +555,18 @@ body {
         & .popular-stargazers {
             display: inline-block;
             float: right;
-            margin-top: -5px;
+            margin-top: -9px;
+            position: relative;
+
+            &:after {
+                content: " ";
+                position: absolute;
+                background: url(../images/star.png);
+                right: -20px;
+                top: -1px;
+                height: 16px;
+                width: 16px;
+            }
         }
 
         & .pop-repo-description {
@@ -514,6 +574,53 @@ body {
         }
     }
 }
+
+.contributions-calendar-container {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 4px;
+    border: 1px solid $gray;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    & .contribution-head {
+        height: 35px;
+        background: $light-gray;
+        border-bottom: 1px solid $gray;
+        padding-left: 10px;
+        line-height: 35px;
+        font-weight: bold;
+        color: darken($dark-gray-text, 13.5%);
+    }
+
+    & .commit-calendar {
+        height: 152px;
+        border-bottom: 1px solid $gray;
+    }
+
+    & .commit-stats {
+        height: 80px;
+        text-align: center;
+        & ul {
+            list-style: none;
+            height: 100%;
+            margin: 0;
+            margin-right: -4px;
+            padding-top: 17px;
+            margin-bottom: 17px;
+            & li {
+                display: inline-block;
+                width: 33.1%;
+                border-right: 1px solid $gray;
+                float: left;
+                font-size: 11px;
+                color: $dark-gray-text;
+            }
+        }
+    }    
+}
+
 
 ///// SideBar //////////////////////////////////////
 ////////////////////////////////////////////////////

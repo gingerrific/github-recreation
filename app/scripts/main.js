@@ -38,25 +38,27 @@ function headerBio (bio) {
 }
 
 function popularRendering (data) {
-    data.forEach(function (repo){
-      if (repo.description && repo.description.length > 40) {
-        repo.description=(repo.description.substring(0, 40)+'...');
-      }  
+    _.sortBy(data, function (sortedData) {
+      return sortedData.stargazers_count; //sorts the repos by their stargazer count. default is ascending order
+    }).reverse().slice(0,5).forEach(function (repo){ //reverses the ascending order, and includes only the first 5 sorted objects
+      if (repo.description && repo.description.length > 40) { // if the repo has a description and it's length is greater than 40 characters...
+        repo.description=(repo.description.substring(0, 40)+'...'); // truncate it and add "..." at the end
+      }
       var popRepos = popularTemplate(repo);
-      $('.popular-repos').prepend(popRepos);
+      $('.popular-repos').append(popRepos);
     });
 }
 
-// fix me by stargazers count
-// function popularRendering (data) {
-//     _.sortBy(data, function (sortedData){
-//       return sortedData.
-//     })
-//     data.forEach(function (repo){
-//       var popRepos = popularTemplate(repo);
-//       $('.popular-repos').prepend(popRepos);
-//     });
-// };
+// attempt at rendering commits
+// function repoStatsUrl (repos) {
+//   repos.map(function (object){
+//     return(object.commits_url.slice(0, -6));
+//   }).map(function (repoLink){
+//       $.getJSON("\'"+repoLink + apiKEY+"\'").done(function (x){
+//         console.log(x.responseJSON.length)
+//       });
+// });
+// }
 
 
 
@@ -70,6 +72,15 @@ $('.header-search').focus( function () {
   $('.header-links').delay(150).queue( function (next) {$(this).css('opacity', '1'); next();});
 });
 
+
+$('.content-nav li').click(function () {
+  var tab_id = $(this).attr('data-tab')
+  $('.content-nav li').removeClass('active-tab');
+  $('.tabbed-content').removeClass('active');
+  $(this).addClass('active-tab');
+  $("."+tab_id).addClass('active');
+})
+
 ///// API Calls ////////////////////////////////////
 ////////////////////////////////////////////////////
 
@@ -81,6 +92,7 @@ $.getJSON('https://api.github.com/users/gingerrific' + apiKEY).done(function (us
 $.getJSON('https://api.github.com/users/gingerrific/repos' + apiKEY).done(function (repos){
   repoRendering(repos);
   popularRendering(repos);
+  // repoStatsUrl(repos);
 });
 
 $.getJSON('https://api.github.com/users/gingerrific/starred' + apiKEY).done(function (stars){
@@ -92,3 +104,6 @@ $.getJSON('https://api.github.com/users/gingerrific/starred' + apiKEY).done(func
 
 
 
+// .reduce(function (x,y){
+//   console.log (x+y);
+// });

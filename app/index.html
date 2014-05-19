@@ -67,15 +67,21 @@
            <div class="tabs">
                 <div class="content-nav">
                     <ul>
-                        <li>Contributions</li>
-                        <li class="active-tab">Repositories</li>
-                        <li>Public Activity</li>
+                        <li data-tab="tab-1">
+                            <span></span>
+                            Contributions</li>
+                        <li class="active-tab" data-tab="tab-2">
+                            <span></span>
+                            Repositories</li>
+                        <li data-tab="tab-3">
+                            <span></span>
+                            Public Activity</li>
                     </ul>
                 </div>
                 <div class="edit-profile-button"></div>    
            </div> 
 <!-- repositories tab -->
-            <div class="repo-content">       
+            <div class="tabbed-content active tab-2">       
                 <div class="repo-bar">
                     <input class="search-bar" type= "text" placeholder="Find a repository...">
                     <div class="search-button">Search</div>
@@ -100,7 +106,7 @@
             </div>    
 
 <!-- Contributions tab -->
-            <div class="contributions-content">
+            <div class="tabbed-content tab-1">
                 <div class="popular-and-contributed">
                     <div class="popular-container">
                         <div class="popular-contributions">Popular Repositories
@@ -118,13 +124,27 @@
                 </div>
 
                 <div class="contributions-calendar-container">
-                    <div class="commit-calendar"></div>
-                    <div class="commit-key"></div>
+                    <div class="contribution-head">Contributions</div>
+                    <div class="commit-calendar">
+                        <div class="commit-key"></div>
+                    </div>    
                     <div class="commit-stats">
                         <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>
+                                <span>Year of contributions</span>
+                                <strong></strong>
+                                <span></span> 
+                            </li>
+                            <li>
+                                <span>Longest streak</span>
+                                <strong></strong>
+                                <span></span> 
+                            </li>
+                            <li>
+                                <span>Current streak</span>
+                                <strong></strong>
+                                <span></span> 
+                            </li>
                         </ul>   
                     </div>
                 </div>
